@@ -1,0 +1,45 @@
+.content {
+  display: flex;
+  justify-content: center;
+  margin-top: -1.8rem;
+  align-items: center;
+  width: 100%;
+}
+
+.addTask {
+  width: 38rem;
+  height: 3.37rem;
+  background: var(--gray-500);
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  color: var(--gray-100);
+}
+.addTask:focus {
+  border: 1px solid;
+  border-color: var(--purple-dark);
+  color: var(--gray-100);
+}
+
+.btnAddTask {
+  display: flex;
+  height: 3.25rem;
+  width: 5.62rem;
+  background: var(--blue-dark);
+  border: none;
+  border-radius: 5px;
+  color: var(--gray-100);
+  margin-left: 0.5rem;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnAddTask:hover {
+  background: var(--blue);
+  display: flex;
+}
+.iconAdd {
+  margin-left: 0.25rem;
+  color: var(--gray-100);
+}

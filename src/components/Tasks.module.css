@@ -1,0 +1,49 @@
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+  flex-direction: column;
+  width: 100%;
+}
+.header {
+  display: flex;
+  width: 100%;
+  max-width: 46rem;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+.tarefasCriadas {
+  color: var(--blue);
+}
+.tarefasConcluidas {
+  color: var(--purple);
+}
+.header span {
+  background: var(--gray-400);
+  padding: 0.125rem 0.5rem;
+  color: var(--gray-200);
+  border-radius: 25px;
+  margin-left: 0.5rem;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid;
+  border-color: var(--gray-400);
+  padding: 4rem 1.5rem;
+  max-width: 46rem;
+  width: 100%;
+  border-radius: 8px;
+  flex-direction: column;
+}
+
+.container img {
+  width: 3.5rem;
+  margin-bottom: 1rem;
+}
+.container p {
+  color: var(--gray-300);
+}

@@ -1,0 +1,70 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  width: 100%;
+  margin-bottom: 0.75rem;
+  background: var(--gray-500);
+  max-width: 46rem;
+  padding: 1rem;
+  border: 0.5px solid;
+  border-color: var(--gray-400);
+  border-radius: 8px;
+}
+.container label input[type="checkbox"] {
+  display: none;
+}
+
+.container p {
+  color: var(--gray-100);
+  margin-left: 1rem;
+}
+
+.unchecked {
+  padding: 0px;
+  background: var(--gray-500);
+  border: 1px solid var(--blue);
+  color: var(--white);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
+.unchecked:hover {
+  border-color: var(--blue-dark);
+}
+.checked {
+  padding: 0px;
+  background: var(--purple-dark);
+  border: 1px solid var(--purple-dark);
+  color: var(--gray-100);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
+.checked:hover {
+  background: var(--purple);
+  border: 1px solid var(--purple);
+}
+
+.trash {
+  padding: 0px;
+  background: var(--gray-500);
+  border: none;
+  color: var(--gray-300);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
