@@ -16,9 +16,14 @@
   display: none;
 }
 
-.container p {
+.paragraph {
   color: var(--gray-100);
   margin-left: 1rem;
+}
+.paragraphCompleted {
+  color: var(--gray-300);
+  margin-left: 1rem;
+  text-decoration: line-through;
 }
 
 .unchecked {
@@ -50,6 +55,7 @@
   height: 1.5rem;
   cursor: pointer;
 }
+
 .checked:hover {
   background: var(--purple);
   border: 1px solid var(--purple);

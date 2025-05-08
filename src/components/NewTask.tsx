@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { ChangeEvent, useState } from "react";
 import styles from "./NewTask.module.css";
 import { PlusCircle } from "phosphor-react";

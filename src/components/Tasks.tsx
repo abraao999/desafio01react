@@ -4,19 +4,25 @@ import { NewTask } from "./NewTask";
 import Clipboard from "../assets/Clipboard.svg";
 import { ListTasks } from "./ListTasks";
 
-interface ListType {
+export interface ListType {
   id: number;
   desc: string;
+  completed: boolean;
 }
 export function Tasks() {
   const [task, setTask] = useState("");
   const [listTasks, setListTasks] = useState<ListType[]>([]);
+  const [contador, setContador] = useState(0);
 
   function onChangeNewTask(valor: string) {
     setTask(valor);
   }
   function onAddTask() {
-    const dado: ListType = { id: listTasks.length + 1, desc: task };
+    const dado: ListType = {
+      id: listTasks.length + 1,
+      desc: task,
+      completed: false,
+    };
 
     setListTasks([...listTasks, dado]);
   }
@@ -25,6 +31,21 @@ export function Tasks() {
     const listAux = listTasks;
     const newArray = listAux.filter((valor) => valor.id != id);
     setListTasks(newArray);
+  }
+  function onTaskCompleted(id: number) {
+    const taskToUpdate = listTasks.find((task) => task.id === id);
+
+    if (!taskToUpdate) return; // segurança: se não encontrar, não faz nada
+
+    const updatedTask = { ...taskToUpdate, completed: true };
+
+    const filteredList = listTasks.filter((task) => task.id !== id);
+
+    const newList = [...filteredList, updatedTask];
+
+    setListTasks(newList);
+    const contadorAux = contador + 1;
+    setContador(contadorAux);
   }
   return (
     <>
@@ -40,16 +61,21 @@ export function Tasks() {
             Tarefas criadas <span>{listTasks.length}</span>
           </p>
           <p className={styles.tarefasConcluidas}>
-            Concluídas <span>0</span>
+            Concluídas{" "}
+            <span>
+              {listTasks.length > 0
+                ? `${contador} de ${listTasks.length}`
+                : "0"}
+            </span>
           </p>
         </div>
         {listTasks.length > 0 ? (
           listTasks.map((item) => (
             <ListTasks
               key={item.id}
-              item={item.desc}
-              id={item.id}
+              item={item}
               onItemDelete={onItemDelete}
+              onTaskCompleted={onTaskCompleted}
             />
           ))
         ) : (
